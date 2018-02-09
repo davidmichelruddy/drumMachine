@@ -258,3 +258,31 @@ function isPointInButton(p, column, row) {
            p.x > b.x + BUTTON_SIZE ||
            p.y > b.y + BUTTON_SIZE);
 };
+
+
+// ALL OFF
+
+(function allOff() {
+
+    // Every time the user clicks on the canvas...
+    document.getElementById("button").addEventListener("click", function(e) {
+
+      // ...Get the coordinates of the mouse pointer relative to the
+      // canvas...
+      //var p = { x: e.offsetX, y: e.offsetY };
+
+      // ...Go through every track...
+      data.tracks.forEach(function(track, row) {
+
+        // ...Go through every button in this track...
+        track.steps.forEach(function(on, column) {
+
+          // ...If the mouse pointer was inside this button...
+
+
+            // ...Switch it off if it was on or on if it was off.
+            track.steps[column] = false;
+        });
+      });
+    });
+  })();
